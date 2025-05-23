@@ -14,3 +14,9 @@ Once this data is collected, the user is then prompted to complete a certain num
 Finally, an exit survey is provided to the user for any final input.
 
 The final screen of the app is a report of all the data acquired, for demonstrative purposes. 
+
+TO RUN THIS PROGRAM
+After downloading and launching the .py file, enter streamlit run project1.py
+A browser will open to access the application
+
+*Note*: If the .py file name is changed, replace the name in the command with the changed name.

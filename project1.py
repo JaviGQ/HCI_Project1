@@ -189,27 +189,29 @@ def main():
         task_df = load_from_csv(TASK_CSV)
         if not task_df.empty:
             st.dataframe(task_df)
+            st.write("**Test Data Visualization**")
+            chart_data = pd.DataFrame(task_df)
+            chart_data = pd.concat([chart_data, demographic_df], ignore_index=True)
+            st.bar_chart(chart_data, x_label="Test #", y_label="Duration in Seconds", y="duration_seconds",
+                         stack=True)
+            # st.scatter_chart(chart_data, x_label="Test #", x="success", y_label="Duration in Seconds", y="duration_seconds")
         else:
             st.info("No task data available yet.")
 
-        st.write("**Test Data Visualization**")
-        chart_data = pd.DataFrame(task_df)
-        chart_data = pd.concat([chart_data, demographic_df], ignore_index=True)
-        st.bar_chart(chart_data, x_label="Test #", y_label="Duration in Seconds", y="duration_seconds",
-                     stack=True)
-        #st.scatter_chart(chart_data, x_label="Test #", x="success", y_label="Duration in Seconds", y="duration_seconds")
+
 
 
         st.write("**Exit Questionnaire Data**")
         exit_df = load_from_csv(EXIT_CSV)
         if not exit_df.empty:
             st.dataframe(exit_df)
+            st.write("**Questionnaire Visualization**")
+            question_data = pd.DataFrame(exit_df)
+            st.bar_chart(question_data[["satisfaction", "difficulty"]], x_label="Test #", y_label="Rating", stack=False)
         else:
             st.info("No exit questionnaire data available yet.")
 
-        st.write("**Questionnaire Visualization**")
-        question_data = pd.DataFrame(exit_df)
-        st.bar_chart(question_data[["satisfaction", "difficulty"]], x_label="Test #", y_label="Rating", stack=False)
+
 
         # Example of aggregated stats (for demonstration only)
         if not exit_df.empty:
