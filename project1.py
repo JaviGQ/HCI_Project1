@@ -44,7 +44,7 @@ def main():
     with home:
         st.header("Introduction")
         st.write("""
-        Welcome to the Usability Testing Tool for HCI
+        Welcome to the Usability Testing Tool for HCI.
 
         In this app, you will:
         1. Provide consent for data collection.
