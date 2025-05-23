@@ -1,6 +1,8 @@
 # HCI_Project1
 Project 1 for HCI
 
+**Javier Gil**
+
 This app is to be used later to test the usability of project 2. This app was designed to be a modular and customizable means of testing other apps via a user's input.
 
 A user will first be informed of the test and be required to provide consent to participate.
